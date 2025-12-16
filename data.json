@@ -1,0 +1,172 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "João Silva",
+      "email": "joao@empresa.com",
+      "role": "colaborador",
+      "passwordHash": "$2b$10$KiWYYXzSaHnceO6Rz1PhnO9zvc.KQR7SoqBanbQHj8PxBZHQ8e.qi"
+    },
+    {
+      "id": "2",
+      "name": "Maria Santos",
+      "email": "maria@empresa.com",
+      "role": "gerente",
+      "passwordHash": "$2b$10$TL2VOmUdsJt9xfJxdaYgHuPzgbrUtp69M5uGKlvLfhng4jhFO2xHO"
+    },
+    {
+      "id": "3",
+      "name": "Pedro Costa",
+      "email": "pedro@empresa.com",
+      "role": "diretor",
+      "password": "123"
+    },
+    {
+      "id": "4",
+      "name": "Ana Compras",
+      "email": "ana@empresa.com",
+      "role": "compras",
+      "passwordHash": "$2b$10$uVsrc03QPSOwu7otBraGCOz3YfVzwtxMAaNc.VeN8.S7EzVhCL9ca"
+    }
+  ],
+  "solicitacoes": [
+    {
+      "id": "7f406b33-6013-4541-92a4-6d7ef5195d00",
+      "origem": "São Paulo",
+      "destino": "Rio de Janeiro",
+      "dataIda": "2025-12-04",
+      "dataVolta": "2025-12-18",
+      "justificativa": "teste",
+      "solicitanteId": "1",
+      "solicitanteNome": "João Silva",
+      "status": "pendente_gerente",
+      "createdAt": "2025-12-04T18:06:15.862Z",
+      "historico": []
+    },
+    {
+      "id": "4ab93fa7-9007-472a-b486-945a1e378144",
+      "origem": "São Paulo",
+      "destino": "Rio de Janeiro",
+      "dataIda": "2025-12-18",
+      "dataVolta": "2025-12-25",
+      "justificativa": "teste",
+      "solicitanteId": "1",
+      "solicitanteNome": "João Silva",
+      "vooEscolhido": {
+        "id": "mock-flight-11",
+        "preco": "1803.59",
+        "moeda": "BRL",
+        "companhia": "GOL",
+        "origem": "SÃO",
+        "destino": "RIO",
+        "dataIda": "2025-12-17T13:08:00.000Z",
+        "dataVolta": "2025-12-25T00:00:00.000Z",
+        "duracaoIda": "8h 59m",
+        "duracaoVolta": "8h 54m",
+        "escalasIda": 1,
+        "escalasVolta": 1,
+        "detalhes": {
+          "ida": [
+            {
+              "origem": "SÃO",
+              "destino": "RIO",
+              "partida": "2025-12-17T13:08:00.000Z",
+              "chegada": "2025-12-17T16:21:00.071Z",
+              "duracao": "4H1M",
+              "companhia": "GO",
+              "numeroVoo": "GO3287"
+            }
+          ],
+          "volta": [
+            {
+              "origem": "RIO",
+              "destino": "SÃO",
+              "partida": "2025-12-25T00:00:00.000Z",
+              "chegada": "2025-12-25T02:39:50.147Z",
+              "duracao": "3H0M",
+              "companhia": "GO",
+              "numeroVoo": "GO8078"
+            }
+          ]
+        },
+        "linkReserva": "MOCK"
+      },
+      "status": "pendente_diretor",
+      "createdAt": "2025-12-11T15:07:42.964Z",
+      "historico": [
+        {
+          "acao": "Aprovado pelo Gerente",
+          "motivo": "sim",
+          "data": "2025-12-11T16:33:56.061Z"
+        }
+      ],
+      "aprovacaoGerente": {
+        "aprovado": true,
+        "motivo": "sim",
+        "data": "2025-12-11T16:33:56.061Z"
+      }
+    },
+    {
+      "id": "8311a8c8-6259-4935-b570-09a3feaf713a",
+      "origem": "São Paulo",
+      "destino": "Rio de Janeiro",
+      "dataIda": "2025-12-20",
+      "dataVolta": "2025-12-29",
+      "justificativa": "53w5",
+      "solicitanteId": "4",
+      "solicitanteNome": "Ana Compras",
+      "solicitanteEmail": "ana@empresa.com",
+      "vooEscolhido": null,
+      "status": "PENDENTE_COTACAO",
+      "cotacoes": [],
+      "cotacaoSelecionada": null,
+      "anexos": [],
+      "createdAt": "2025-12-12T20:24:29.851Z",
+      "historico": [
+        {
+          "acao": "Solicitação criada",
+          "data": "2025-12-12T20:24:29.851Z"
+        }
+      ]
+    },
+    {
+      "id": "7de8fe19-956d-4327-84ad-ac44f094e0d8",
+      "tipoServico": "Passagem aérea",
+      "nomeCompleto": "TESTE",
+      "empresa": "GWIND",
+      "gestor": "Fábio Morais",
+      "nomeViajantes": "MATHEUS",
+      "projeto": "Projeto A",
+      "motivoViagem": "Reunião",
+      "urgencia": "SIM",
+      "paisOrigem": "Brasil",
+      "paisDestino": "Chile",
+      "cidadeOrigem": "São Paulo",
+      "cidadeDestino": "Antofagasta",
+      "dataPartida": "2025-12-15",
+      "dataRetorno": "2025-12-17",
+      "flexibilidade": "Sem Flexibilidade de alteração",
+      "departamento": "Operações",
+      "solicitanteId": "4",
+      "solicitanteNome": "Ana Compras",
+      "solicitanteEmail": "ana@empresa.com",
+      "origem": "São Paulo",
+      "destino": "Antofagasta",
+      "dataIda": "2025-12-15",
+      "dataVolta": "2025-12-17",
+      "justificativa": "Reunião",
+      "status": "PENDENTE_COTACAO",
+      "cotacoes": [],
+      "cotacaoSelecionada": null,
+      "anexos": [],
+      "createdAt": "2025-12-12T20:35:41.444Z",
+      "historico": [
+        {
+          "acao": "Solicitação criada",
+          "data": "2025-12-12T20:35:41.444Z"
+        }
+      ]
+    }
+  ],
+  "aprovacoes": []
+}
