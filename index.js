@@ -199,7 +199,9 @@ app.post('/api/solicitacoes', async (req, res) => {
     const solicitacao = {
       id: uuidv4(),
       ...req.body,
-      status: 'PENDENTE_COTACAO', // Novo status: aguardando Compras adicionar cotações
+      // Fluxo esperado no TravelFlow: entrar primeiro em pendente de aprovação
+      // (o frontend filtra por pendente_gerente / pendente_diretor)
+      status: 'pendente_gerente',
       cotacoes: [], // Array de cotações
       cotacaoSelecionada: null, // ID da cotação selecionada
       anexos: [], // Array de anexos (PDFs, bilhetes, etc)
