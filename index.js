@@ -502,10 +502,10 @@ app.get('/api/estatisticas', async (req, res) => {
     
     const stats = {
       total: solicitacoes.length,
-      pendenteCotacao: solicitacoes.filter(s => s.status === 'PENDENTE_COTACAO').length,
-      aguardandoEscolha: solicitacoes.filter(s => s.status === 'AGUARDANDO_ESCOLHA').length,
-      aguardandoAprovacao: solicitacoes.filter(s => s.status === 'AGUARDANDO_APROVACAO').length,
-      pendenteGestor: solicitacoes.filter(s => s.status === 'PENDENTE_GESTOR').length,
+      pendenteCotacao: solicitacoes.filter(s => s.status === 'PENDENTE_COTACAO' || s.status === 'pendente_cotacao').length,
+      aguardandoEscolha: solicitacoes.filter(s => s.status === 'AGUARDANDO_ESCOLHA' || s.status === 'aguardando_escolha').length,
+      aguardandoAprovacao: solicitacoes.filter(s => s.status === 'AGUARDANDO_APROVACAO' || s.status === 'aguardando_aprovacao').length,
+      pendenteGestor: solicitacoes.filter(s => s.status === 'PENDENTE_GESTOR' || s.status === 'pendente_gestor').length,
       pendenteGerente: solicitacoes.filter(s => s.status === 'PENDENTE_GERENTE' || s.status === 'pendente_gerente').length,
       pendenteDiretor: solicitacoes.filter(s => s.status === 'PENDENTE_DIRETOR' || s.status === 'pendente_diretor').length,
       emCompra: solicitacoes.filter(s => s.status === 'EM_COMPRA').length,
