@@ -53,6 +53,7 @@ app.use((req, res, next) => {
 app.use(cors({
   origin: [
     'https://gwindapp-passagen.netlify.app',
+    'https://gwind-app-test.netlify.app', // Portal principal
     'https://passagen.netlify.app',
     'http://localhost:3000',
     'http://localhost:5173',
