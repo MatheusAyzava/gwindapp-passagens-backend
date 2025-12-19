@@ -707,9 +707,16 @@ app.delete('/api/solicitacoes/:id/cotacoes/:cotacaoId', async (req, res) => {
 
 // Inicializar e iniciar servidor
 initializeData().then(() => {
-  const server = app.listen(PORT, () => {
+  const server = app.listen(PORT, '0.0.0.0', () => {
     console.log(`✅ Servidor rodando na porta ${PORT}`);
-    console.log(`📡 API disponível em http://localhost:${PORT}`);
+    console.log(`📡 API disponível em http://0.0.0.0:${PORT}`);
+    console.log(`🌐 Ambiente: ${process.env.NODE_ENV || 'development'}`);
+    console.log(`📦 Rotas disponíveis:`);
+    console.log(`   - GET  / (raiz)`);
+    console.log(`   - GET  /health`);
+    console.log(`   - POST /api/login`);
+    console.log(`   - POST /api/solicitacoes`);
+    console.log(`   - GET  /api/solicitacoes`);
   });
 
   // Configurações para melhor gerenciamento de conexões
