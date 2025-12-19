@@ -737,13 +737,18 @@ initializeData()
     process.exit(1);
   });
 
-  // Graceful shutdown
-  process.on('SIGTERM', () => {
-    console.log('🛑 Encerrando servidor...');
-    server.close(() => {
-      console.log('✅ Servidor encerrado.');
-      process.exit(0);
+    // Graceful shutdown
+    process.on('SIGTERM', () => {
+      console.log('🛑 Encerrando servidor...');
+      server.close(() => {
+        console.log('✅ Servidor encerrado.');
+        process.exit(0);
+      });
     });
+  })
+  .catch((error) => {
+    console.error('❌ Erro ao inicializar servidor:', error);
+    console.error('Stack trace:', error.stack);
+    process.exit(1);
   });
-});
 
