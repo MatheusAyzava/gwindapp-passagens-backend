@@ -508,10 +508,13 @@ app.get('/api/estatisticas', async (req, res) => {
       pendenteGestor: solicitacoes.filter(s => s.status === 'PENDENTE_GESTOR' || s.status === 'pendente_gestor').length,
       pendenteGerente: solicitacoes.filter(s => s.status === 'PENDENTE_GERENTE' || s.status === 'pendente_gerente').length,
       pendenteDiretor: solicitacoes.filter(s => s.status === 'PENDENTE_DIRETOR' || s.status === 'pendente_diretor').length,
-      emCompra: solicitacoes.filter(s => s.status === 'EM_COMPRA').length,
-      compradas: solicitacoes.filter(s => s.status === 'COMPRADA').length,
+      pendenteCompras: solicitacoes.filter(s => s.status === 'PENDENTE_COMPRAS' || s.status === 'pendente_compras' || s.status === 'PENDENTE_COTACAO' || s.status === 'pendente_cotacao' || s.status === 'EM_COMPRA' || s.status === 'em_compra').length,
+      emCompra: solicitacoes.filter(s => s.status === 'EM_COMPRA' || s.status === 'em_compra').length,
+      compradas: solicitacoes.filter(s => s.status === 'COMPRADA' || s.status === 'comprada').length,
+      aprovadas: solicitacoes.filter(s => s.status === 'APROVADO_FINAL' || s.status === 'aprovado_final' || s.status === 'processada' || s.status === 'PROCESSADA' || s.status === 'COMPRADA' || s.status === 'comprada').length,
       rejeitadas: solicitacoes.filter(s => s.status === 'REJEITADA' || s.status === 'rejeitada').length,
-      ajusteSolicitado: solicitacoes.filter(s => s.status === 'AJUSTE_SOLICITADO').length
+      processadas: solicitacoes.filter(s => s.status === 'processada' || s.status === 'PROCESSADA' || s.status === 'COMPRADA' || s.status === 'comprada').length,
+      ajusteSolicitado: solicitacoes.filter(s => s.status === 'AJUSTE_SOLICITADO' || s.status === 'ajuste_solicitado').length
     };
     
     // Calcular valor total estimado do mês
