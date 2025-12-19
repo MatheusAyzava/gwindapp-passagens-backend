@@ -63,7 +63,22 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, '../client/dist')));
+// Remover servidor de arquivos estáticos - backend é apenas API
+// app.use(express.static(path.join(__dirname, '../client/dist')));
+
+// Rota raiz para verificar se a API está funcionando
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'API do Sistema de Passagens Aéreas - Gwind Air',
+    status: 'online',
+    version: '1.0.0'
+  });
+});
+
+// Rota de health check
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
 
 // Inicializar dados se não existirem
 async function initializeData() {
